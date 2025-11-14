@@ -23,10 +23,23 @@ public class GlobalExceptionHandler {
     //    public ResponseEntity<?> handleCategoryNotFound(CategoryNotFoundException e) {
     //        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     //    }
-    //    @ExceptionHandler(IllegalArgumentException.class)
-    //    public ResponseEntity<?> handleIllegalArgument(IllegalArgumentException e) {
-    //        return ResponseEntity.badRequest().body(e.getMessage());
-    //    }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<?> handleIllegalArgument(IllegalArgumentException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+    @ExceptionHandler(CategoryAlreadyExistsException.class)
+    public ResponseEntity<String> handleCategoryExists(CategoryAlreadyExistsException e) {
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
+    }
+
+    @ExceptionHandler(CategoryNotFoundException.class)
+    public ResponseEntity<String> handleCategoryNotFound(CategoryNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
+
+
+
 
 
 
