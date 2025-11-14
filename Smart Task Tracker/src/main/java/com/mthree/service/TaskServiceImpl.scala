@@ -1,11 +1,8 @@
-package com.mthree.scala.service
+package com.mthree.service
 
+import com.mthree.dao.{CategoryDao, TaskDao}
+import com.mthree.entity.Task
 import org.springframework.stereotype.Service
-import com.mthree.dao.TaskDao;
-import com.mthree.dao.CategoryDao;
-import com.mthree.entity.Task;
-import com.mthree.entity.Category;
-import com.mthree.service.TaskServiceTrait
 
 import java.util.Optional
 import scala.jdk.CollectionConverters._
@@ -24,25 +21,25 @@ class TaskServiceImpl(
     Optional.of(taskRepo.save(task))
   }
 
-  override def getAllTasks(): List[Task] =
-    taskRepo.findAll().asScala.toList
+  override def getAllTasks(): java.util.List[Task] =
+    taskRepo.findAll().asScala.toList.asJava
 
-  override def getTaskById(id: Int): Optional[Task] =
+  override def getTaskById(id: Long): Optional[Task] =
     taskRepo.findById(id)
 
-  override def getTasksByCategory(categoryId: Long): List[Task] = {
+  override def getTasksByCategory(categoryId: Long): java.util.List[Task] = {
     val catOpt = categoryRepo.findById(categoryId)
 
     if (!catOpt.isPresent)
-      return List.empty[Task]
+      return List.empty[Task].asJava
 
-    catOpt.get().getTasks.asScala.toList
+    catOpt.get().getTasks.asScala.toList.asJava
   }
 
 
 
 
-  override def updateTask(id: Int, updated: Task): Optional[Task] = {
+  override def updateTask(id: Long, updated: Task): Optional[Task] = {
     val taskOpt = taskRepo.findById(id)
     if (!taskOpt.isPresent) return Optional.empty()
 
@@ -56,7 +53,7 @@ class TaskServiceImpl(
     Optional.of(taskRepo.save(existing))
   }
 
-  override def deleteTask(id: Int): Boolean = {
+  override def deleteTask(id: Long): Boolean = {
     if (!taskRepo.existsById(id)) return false
     taskRepo.deleteById(id)
     true
