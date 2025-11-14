@@ -9,13 +9,13 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mthree</groupId>
-    <artifactId>Smart-Task-Tracker</artifactId>
+    <artifactId>Smart Task Tracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Smart Task Tracker</name>
     <description>Inventory project for Spring Boot and JPA</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <dependencies>
