@@ -1,40 +1,49 @@
 package com.mthree.controller;
 
 import com.mthree.entity.Category;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-//import com.mthree.service.CategoryServiceImpl;
+import com.mthree.service.*;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/categories")
 @CrossOrigin
 public class CategoryController {
     //service
-    //CategoryServiceImpl categoryService;
+    service.CategoryServiceImpl categoryService;
+
+    @Autowired
+    public CategoryController(service.CategoryServiceImpl categoryService){
+        this.categoryService = categoryService;
+    }
+
 
     @GetMapping("")
     public List<Category> getAllCategories() {
-        return null;
+
+        return categoryService.getAllCategories();
     }
 
     @GetMapping("/{id}")
-    public Category getCategoryById(@PathVariable int id){
-        return null;
+    public Optional<Category> getCategoryById(@PathVariable int id){
+        return categoryService.getCategoryById(id);
     }
 
     @PutMapping("/{id}")
-    public Category updateCategory(@PathVariable int id, @RequestBody Category category){
-        return null;
+    public Optional<Category> updateCategory(@PathVariable int id, @RequestBody Category category){
+        return categoryService.updateCategory(category);
     }
 
     @PostMapping("/{id}")
-    public Category addCategory(@RequestBody Category category){
-        return null;
+    public Optional<Category> addCategory(@RequestBody Category category){
+        return categoryService.createCategory(category);
     }
 
     @DeleteMapping("/{id}")
     public void deleteCategory(@PathVariable int id){
-        //
+        categoryService.deleteCategory(id);
     }
 
 }
