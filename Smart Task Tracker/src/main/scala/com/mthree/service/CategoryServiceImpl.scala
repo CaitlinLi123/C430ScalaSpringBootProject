@@ -13,15 +13,31 @@ class CategoryServiceImpl @Autowired() (val categoryDao: CategoryDao) extends Ca
 
 
   override def createCategory(category: Category): Optional[Category] = {
+    val existing = categoryDao.findById(category.getId)
+
+    if (existing.isPresent) {
+//      throw new CategoryAlreadyExistsException(
+//        s"Category with ID ${category.getId} already exists"
+//      )
+      //Customed exceptions?
+    }
     Optional.of(categoryDao.save(category))
   }
 
   override def getAllCategories(): java.util.List[Category] = {
+
     categoryDao.findAll()
   }
 
   override def getCategoryById(id: Long): Optional[Category] = {
-    categoryDao.findById(id)
+    val result = categoryDao.findById(id)
+
+    if (!result.isPresent) {
+      //throw new CategoryNotFoundException(s"Category with ID $id not found")
+      //Customed exception?
+    }
+
+    result
   }
 
   override def updateCategory(updated: Category): Optional[Category] = {
