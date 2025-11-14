@@ -1,4 +1,4 @@
-package service
+package com.mthree.service
 
 import com.mthree.dao.CategoryDao
 import com.mthree.entity.Category
