@@ -9,16 +9,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
-    // This will be uncommented when all other custom exception classes are handled
-    // in this file. Comment it for now to prevent hiding important information when
-    // exception happens.
-    // @ExceptionHandler(Exception.class)
-    // public ResponseEntity<String> handleGeneric(Exception e) {
-    // return
-    // ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went
-    // wrong. " + e.getMessage());
-    // }
     //    @ExceptionHandler(CategoryNotFoundException.class)
     //    public ResponseEntity<?> handleCategoryNotFound(CategoryNotFoundException e) {
     //        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
@@ -37,10 +27,15 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleCategoryNotFound(CategoryNotFoundException e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
+    @ExceptionHandler(TaskNotFoundException.class)
+    public ResponseEntity<String> handleTaskNotFound(TaskNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    }
 
-
-
-
-
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleGeneric(Exception e) {
+        return
+                ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went wrong. " + e.getMessage());
+    }
 
 }

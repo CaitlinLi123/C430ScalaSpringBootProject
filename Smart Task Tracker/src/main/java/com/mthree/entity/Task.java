@@ -1,5 +1,7 @@
 package com.mthree.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -33,6 +35,7 @@ public class Task {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
+//    @JsonIgnore
     private Category category;
 
     public Category getCategory() {

@@ -7,9 +7,9 @@ import com.mthree.service.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+//@RestController
 @RequestMapping("/categories")
-@CrossOrigin
+//@CrossOrigin
 public class CategoryController {
     //service
     @Autowired
