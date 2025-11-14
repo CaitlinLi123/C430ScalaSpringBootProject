@@ -8,7 +8,7 @@ trait CategoryServiceTrait {
 
   def createCategory(category: Category): Optional[Category]
 
-  def getAllCategories(): List[Category]
+  def getAllCategories(): java.util.List[Category]
 
   def getCategoryById(id: Long): Optional[Category]
 
