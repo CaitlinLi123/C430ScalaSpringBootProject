@@ -7,18 +7,19 @@ import com.mthree.service.*;
 import java.util.List;
 import java.util.Optional;
 
-//@RestController
+import com.mthree.service.CategoryServiceTrait;
+
+@RestController
 @RequestMapping("/categories")
 //@CrossOrigin
 public class CategoryController {
     //service
     @Autowired
-    service.CategoryServiceTrait categoryService;
+    private CategoryServiceTrait categoryService;
 
-    /*@Autowired
-    public CategoryController(service.CategoryServiceTrait categoryService) {
-        this.categoryService = categoryService;
-    }*/
+//    public CategoryController(CategoryServiceTrait categoryService) {
+//        this.categoryService = categoryService;
+//    }
 
     @GetMapping("")
     public List<Category> getAllCategories() {

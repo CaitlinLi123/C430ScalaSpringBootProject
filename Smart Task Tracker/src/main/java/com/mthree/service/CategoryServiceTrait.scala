@@ -1,4 +1,4 @@
-package service
+package com.mthree.service
 
 import com.mthree.entity.Category
 

@@ -1,8 +1,9 @@
-package service
+package com.mthree.service
 
 import com.mthree.dao.CategoryDao
 import com.mthree.entity.Category
 import com.mthree.exception.{CategoryAlreadyExistsException, CategoryNotFoundException}
+import com.mthree.service.CategoryServiceTrait
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
