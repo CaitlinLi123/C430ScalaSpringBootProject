@@ -8,10 +8,10 @@
         <version>2.1.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.sg</groupId>
-    <artifactId>inventorystarter</artifactId>
+    <groupId>com.mthree</groupId>
+    <artifactId>Smart Task Tracker</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>inventorystarter</name>
+    <name>Smart Task Tracker</name>
     <description>Inventory project for Spring Boot and JPA</description>
 
     <properties>
