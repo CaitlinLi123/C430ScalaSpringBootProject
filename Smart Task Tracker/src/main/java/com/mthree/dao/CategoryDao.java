@@ -3,37 +3,34 @@ package com.mthree.dao;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.data.repository.CrudRepository;
+
 import com.mthree.entity.Category;
 
-interface CategoryDao {
+public interface CategoryDao extends CrudRepository<Category, Long> {
+
     /*
-     * Writes the given category to the database.
-     * May throw an exception (which?)
+     * Writes the given category to the database
      */
-    public void create(Category category);
+    @Override
+    public Category save(Category category);
 
     /*
      * Returns a list of all categories in the database.
      */
-    public List<Category> listAll();
+    @Override
+    public List<Category> findAll();
 
     /*
-     * Returns the category with the given id, or empty
-     *  if no such category exists.
+     * Returns the category with the given id, or empty if no such category exists.
      */
-    public Optional<Category> getById(Long id);
-
-    /*
-     * Writes the given category to the database,
-     *  overwriting an existing category with the same id.
-     * May throw an exception (which?)
-     */
-    public void update(Category category);
+    @Override
+    public Optional<Category> findById(Long id);
 
     /*
      * Deletes any category with the same id as the given category.
-     * May throw an exception? (which?)
      */
+    @Override
     public void delete(Category category);
 
 }
