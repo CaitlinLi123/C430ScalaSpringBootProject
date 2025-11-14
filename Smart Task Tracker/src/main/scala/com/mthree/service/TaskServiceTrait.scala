@@ -11,3 +11,4 @@ trait TaskServiceTrait {
   def updateTask(id: Int, updated: Task): Optional[Task]
   def deleteTask(id: Int): Boolean
 }
+//
