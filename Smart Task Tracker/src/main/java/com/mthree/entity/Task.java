@@ -1,8 +1,8 @@
 package com.mthree.entity;
 
+import org.jetbrains.annotations.NotNull;
 import javax.annotation.Priority;
 import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 

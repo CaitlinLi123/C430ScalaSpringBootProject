@@ -1,9 +1,9 @@
 package com.mthree.entity;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.scheduling.config.Task;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
