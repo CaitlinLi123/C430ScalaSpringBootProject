@@ -19,4 +19,15 @@ public class GlobalExceptionHandler {
     // ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went
     // wrong. " + e.getMessage());
     // }
+    //    @ExceptionHandler(CategoryNotFoundException.class)
+    //    public ResponseEntity<?> handleCategoryNotFound(CategoryNotFoundException e) {
+    //        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    //    }
+    //    @ExceptionHandler(IllegalArgumentException.class)
+    //    public ResponseEntity<?> handleIllegalArgument(IllegalArgumentException e) {
+    //        return ResponseEntity.badRequest().body(e.getMessage());
+    //    }
+
+
+
 }
