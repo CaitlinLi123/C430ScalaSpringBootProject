@@ -1,11 +1,19 @@
 package com.mthree.entity;
 
-import org.jetbrains.annotations.NotNull;
-import org.springframework.scheduling.config.Task;
-
-import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.scheduling.config.Task;
+
+
 
 @Entity
 public class Category {
