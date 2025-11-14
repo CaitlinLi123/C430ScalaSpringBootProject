@@ -1,9 +1,17 @@
 package com.mthree.entity;
 
-import org.jetbrains.annotations.NotNull;
-import javax.annotation.Priority;
-import javax.persistence.*;
 import java.time.LocalDate;
+
+import javax.annotation.Priority;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 
 @Entity
