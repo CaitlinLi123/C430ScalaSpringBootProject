@@ -9,6 +9,10 @@ import java.util.List;
 
 @Repository
 public interface TaskDao extends JpaRepository<Task, Integer> {
+
+    /*
+    *List tasks given category
+     */
     List<Task> findByCategory(Category category);
 }
 
