@@ -3,7 +3,6 @@ package com.mthree.entity;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import javax.annotation.Priority;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
