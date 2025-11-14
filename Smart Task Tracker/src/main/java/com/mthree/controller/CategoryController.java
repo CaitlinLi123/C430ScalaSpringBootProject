@@ -12,13 +12,13 @@ import java.util.Optional;
 @CrossOrigin
 public class CategoryController {
     //service
-    service.CategoryServiceImpl categoryService;
-
     @Autowired
-    public CategoryController(service.CategoryServiceImpl categoryService){
-        this.categoryService = categoryService;
-    }
+    service.CategoryServiceTrait categoryService;
 
+    /*@Autowired
+    public CategoryController(service.CategoryServiceTrait categoryService) {
+        this.categoryService = categoryService;
+    }*/
 
     @GetMapping("")
     public List<Category> getAllCategories() {
